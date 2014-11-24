@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title> Workhorse Tests </title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css"/>
+</head>
+<body>
+<div id="mocha"></div>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script src="../distrib/workhorse.min.js"></script>
+<script>
+    mocha.ui('bdd');
+    mocha.reporter('html');
+    var expect = chai.expect;
+</script>
+<script src="./BaseClassTests.js"></script>
+<script src="./WorkerMessageTests.js"></script>
+<script src="./WorkerTests.js"></script>
+<script src="./SerializerTests.js"></script>
+<script>
+    if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+    }
+    else {
+        mocha.run();
+    }
+</script>
+</body>
+</html>

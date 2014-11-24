@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Workhorse Tests</title>
+</head>
+<body>
+<div>Current Count: <span class="count">0</span></div>
+<div class="error"></div>
+<script type="text/javascript" src="../distrib/workhorse.js"></script>
+<script>
+    var harness = new workhorse.Harness(
+            function (workerMessage) {
+                document.querySelector('.count').innerHTML = workerMessage.content.current;
+            },
+            function (workerMessage) {
+                document.querySelector('.count').innerHTML += ' Complete';
+            },
+            function (workerMessage) {
+                document.querySelector('.error').innerHTML = workerMessage.data;
+            },
+            function (workerMessage) {
+                console.log('Received message', workerMessage);
+            }
+    );
+
+    console.log("Starting up harness.");
+    harness.initWorker('example-worker.js', function (workerId) {
+        harness.start(workerId);
+    });
+</script>
+</body>
+</html>

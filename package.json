@@ -1,0 +1,33 @@
+{
+  "name": "workhorse",
+  "version": "1.0.0",
+  "description": "A javascript library to help serialize objects to pass to a web worker for processing asynchronously.  Useful for having your calculations run in separate threads.",
+  "main": "workhorse.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "webworker",
+    "serialize"
+  ],
+  "author": "Sam Alston",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "class.extend": "^0.9.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-hug": "^0.5.2",
+    "grunt-mocha-phantomjs": "^0.6.0",
+    "mocha": "^2.0.1",
+    "mocha-phantomjs": "^3.5.1",
+    "phantomjs": "^1.9.12"
+  }
+}
